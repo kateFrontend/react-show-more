@@ -28,6 +28,12 @@ function App() {
               <p>{description}</p>
             </div>
             <div className="container">
+              <img src={image} width="500px"/>
+            </div>
+            <div className="container">
+              <p>{source}</p>
+            </div>
+            <div className="container">
               <button className="btn" onClick={() => removeHotel(id)}>Remove</button>
             </div>
           </div>
