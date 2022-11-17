@@ -5,6 +5,11 @@ import { data } from "./data";
 function App() {
   const [hotels, setHotels] = useState(data);
 
+  const removeHotel = (id) => {
+    let newHotels = hotels.filter((hotel) => hotel.id !== id);
+    setHotels(newHotels);
+  }
+
   return (
     <div>
       <div className="container">
