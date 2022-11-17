@@ -11,13 +11,18 @@ function App() {
     setHotels(newHotels);
   };
 
+  const showTextClick = (hotel) => { // open Show more button just for one hotel not for all
+    hotel.showMore = !hotel.showMore
+    setShowMore(!showMore)
+  }
+
   return (
     <div>
       <div className="container">
         <h1>NYC TOP {hotels.length} HOTELS</h1>
       </div>
       {hotels.map((hotel) => {
-        const { id, hotelName, description, image, source } = hotel;
+        const { id, hotelName, description, image, source, showMore } = hotel;
         return (
           <div key={id}>
             <div className="container">
@@ -27,7 +32,7 @@ function App() {
             </div>
             <div className="container">
               <p>{showMore ? description : description.substring(0,220) + "....."} {/* if showMore = true, show full descripton, if showMore = false, show description up to 220 characters */}
-              <button onClick={() => setShowMore(!showMore)}>{showMore ? "Show less" : "Show more"}</button> {/* change button state dynamically !showMore */}
+              <button onClick={() => showTextClick(hotel)}>{showMore ? "Show less" : "Show more"}</button> {/* change button state dynamically !showMore */}
               </p>  
             </div>
             <div className="container">
