@@ -26,7 +26,9 @@ function App() {
               </h2>
             </div>
             <div className="container">
-              <p>{showMore ? description : description.substring(0,220) + "....."}</p>  {/* if showMore = true, show full descripton, if showMore = false, show description up to 220 characters */}
+              <p>{showMore ? description : description.substring(0,220) + "....."} {/* if showMore = true, show full descripton, if showMore = false, show description up to 220 characters */}
+              <button onClick={() => setShowMore(!showMore)}>{showMore ? "Show less" : "Show more"}</button> {/* change button state dynamically !showMore */}
+              </p>  
             </div>
             <div className="container">
               <img src={image} width="500px" />
